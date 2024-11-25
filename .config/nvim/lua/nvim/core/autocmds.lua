@@ -6,7 +6,7 @@ local group = augroup("UserAutocmds", {})
 
 autocmd("FileType", { pattern = "*", command = "setlocal autoindent", group = group })
 autocmd({ "BufNewFile", "BufRead" }, { pattern = "*.blade.php", command = "set filetype=blade", group = group })
-autocmd("TermOpen", { pattern = "*", command = "setlocal norelativenumber", group = group })
+autocmd("TermOpen", { pattern = "*", command = "setlocal nonumbeer", group = group })
 autocmd("TextYankPost", {
     pattern  = "*",
     callback = function ()

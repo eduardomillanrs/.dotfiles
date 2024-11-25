@@ -2,10 +2,10 @@ local global       = require("nvim.core.global")
 local util         = require("nvim.lib.util")
 local on_attach    = require("nvim.lib.lsp.on_attach")
 local capabilities = require("nvim.lib.lsp.capabilities")
-local registry     = require("mason-registry")
+local mason        = require("nvim.lib.mason")
 
 return {
-    bashls        = {
+    bashls       = {
         on_attach    = on_attach({ formatting = false }),
         capabilities = capabilities,
         filetypes    = { "sh", "zsh" },
@@ -15,23 +15,19 @@ return {
             },
         },
     },
-    cssls         = {
+    cssls        = {
         on_attach    = on_attach({ formatting = false }),
         capabilities = capabilities,
     },
-    eslint        = {
+    eslint       = {
         on_attach    = on_attach(),
         capabilities = capabilities,
     },
-    gopls         = {
-        on_attach    = on_attach(),
-        capabilities = capabilities,
-    },
-    html          = {
+    html         = {
         on_attach    = on_attach({ formatting = false }),
         capabilities = capabilities,
     },
-    intelephense  = {
+    intelephense = {
         on_attach    = on_attach(),
         capabilities = capabilities,
         init_options = {
@@ -46,11 +42,11 @@ return {
             },
         },
     },
-    jsonls        = {
+    jsonls       = {
         on_attach    = on_attach({ formatting = false }),
         capabilities = capabilities,
     },
-    lua_ls        = {
+    lua_ls       = {
         on_attach    = on_attach(),
         capabilities = capabilities,
         on_init      = function (client)
@@ -76,11 +72,11 @@ return {
             Lua = {},
         },
     },
-    tailwindcss   = {
+    tailwindcss  = {
         on_attach    = on_attach({ formatting = false }),
         capabilities = capabilities,
     },
-    volar         = {
+    volar        = {
         on_attach    = on_attach({ formatting = false }),
         capabilities = capabilities,
         init_options = {
@@ -89,7 +85,7 @@ return {
             },
         },
     },
-    vtsls         = {
+    vtsls        = {
         on_attach    = on_attach({ formatting = false }),
         capabilities = capabilities,
         settings     = {
@@ -102,10 +98,10 @@ return {
                 tsserver = {
                     globalPlugins = {
                         {
-                            name = "@vue/typescript-plugin",
-                            location = util.path(registry.get_package("vue-language-server"):get_install_path(), "node_modules", "@vue", "language-server"),
-                            languages = { "vue" },
-                            configNamespace = "typescript",
+                            name                                 = "@vue/typescript-plugin",
+                            location                             = util.path(mason.get_install_path("vue-language-server"), "node_modules", "@vue", "language-server"),
+                            languages                            = { "vue" },
+                            configNamespace                      = "typescript",
                             enableForWorkspaceTypeScriptVersions = true,
                         },
                     },
@@ -113,7 +109,7 @@ return {
             },
         },
     },
-    vimls         = {
+    vimls        = {
         on_attach    = on_attach(),
         capabilities = capabilities,
     },
