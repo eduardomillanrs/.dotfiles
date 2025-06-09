@@ -1,0 +1,58 @@
+local options = {
+    -- hlsearch       = false,
+    -- whichwrap      = function (opt) opt:append({ ["<"] = true, [">"] = true, ["["] = true, ["]"] = true, ["h"] = true, ["l"] = true }) end,
+    -- list           = true,
+    autowrite      = true,
+    background     = "dark",
+    backup         = false,
+    clipboard      = "unnamedplus",
+    completeopt    = { "menu", "menuone", "noselect" },
+    cursorline     = true,
+    expandtab      = true,
+    exrc           = true,
+    foldlevel      = 99,
+    formatoptions  = "jcroqlnt",
+    grepformat     = "%f:%l:%c:%m",
+    grepprg        = "rg --vimgrep",
+    guicursor      = "",
+    ignorecase     = true,
+    inccommand     = "nosplit",
+    jumpoptions    = "view",
+    laststatus     = 3,
+    linebreak      = true,
+    mouse          = "a",
+    number         = true,
+    pumheight      = 10,
+    ruler          = false,
+    scrolloff      = 4,
+    sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" },
+    shiftround     = true,
+    shiftwidth     = 4,
+    shortmess      = function (opt) opt:append({ c = true, C = true }) end,
+    showmode       = false,
+    sidescrolloff  = 8,
+    signcolumn     = "no",
+    smartcase      = true,
+    smartindent    = true,
+    splitbelow     = true,
+    splitkeep      = "screen",
+    splitright     = true,
+    tabstop        = 4,
+    termguicolors  = true,
+    undofile       = true,
+    undolevels     = 10000,
+    updatetime     = 250,
+    virtualedit    = "block",
+    wildmode       = "longest:full,full",
+    winborder      = "rounded",
+    winminwidth    = 5,
+    wrap           = false,
+}
+
+for k, v in pairs(options) do
+    if type(v) == "function" then
+        v(vim.opt[k])
+    else
+        vim.opt[k] = v
+    end
+end 

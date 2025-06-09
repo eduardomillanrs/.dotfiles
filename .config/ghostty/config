@@ -1,0 +1,20 @@
+# Font
+font-family = JetBrains Mono
+font-size = 15
+# font-feature = calt, liga, ss02
+
+# Cursor
+cursor-style = block
+
+# Window
+window-padding-x = 0
+window-padding-y = 0
+
+# Shell integration
+shell-integration-features = no-cursor
+
+# Theme
+theme = MaterialOcean
+
+# Macos
+macos-option-as-alt = left
