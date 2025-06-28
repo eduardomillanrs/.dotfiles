@@ -49,10 +49,14 @@ return {
                 lualine_a = {
                     {
                         "tabs",
-                        max_length           = vim.o.columns / 3,
+                        max_length           = vim.o.columns,
                         mode                 = 1,
                         path                 = 0,
                         use_mode_colors      = true,
+                        tabs_color           = {
+                            active   = "lualine_a_normal",
+                            inactive = "lualine_c_normal",
+                        },
                         show_modified_status = false,
                     },
                 },

@@ -1,57 +1,35 @@
 return {
     {
-        "marko-cerovac/material.nvim",
+        "eduardomillanrs/kanso.nvim",
         lazy     = false,
         priority = 1000,
         opts     = {
-            contrast          = {
-                terminal            = true,
-                sidebars            = true,
-                floating_windows    = true,
-                cursor_line         = false,
-                lsp_virtual_text    = true,
-                non_current_windows = false,
-                filetypes           = {},
+            bold           = true,
+            italics        = true,
+            compile        = false,
+            undercurl      = true,
+            commentStyle   = { italic = true },
+            functionStyle  = { italic = true },
+            keywordStyle   = {},
+            statementStyle = {},
+            typeStyle      = { bold = true },
+            transparent    = false,
+            dimInactive    = false,
+            terminalColors = true,
+            colors         = {
+                palette = {},
             },
-            styles            = {
-                comments  = { italic = true },
-                strings   = {},
-                keywords  = {},
-                functions = { italic = true },
-                variables = {},
-                operators = {},
-                types     = { bold = true },
-            },
-            plugins           = {
-                "blink",
-                "dap",
-                "neotest",
-                "nvim-cmp",
-                "nvim-web-devicons",
-            },
-            disable           = {
-                colored_cursor = false,
-                borders        = false,
-                background     = false,
-                term_colors    = false,
-                eob_lines      = false
-            },
-            high_visibility   = {
-                lighter = false,
-                darker  = false
-            },
-            lualine_style     = "default",
-            async_loading     = true,
-            custom_colors     = function (colors)
-                colors.editor.border   = "#393c4b"
-                colors.syntax.comments = "#6b6f7d"
+            overrides      = function (colors)
+                return {}
             end,
-            custom_highlights = {},
+            theme          = "zen",
+            background     = {
+                dark  = "zen",
+                light = "pearl"
+            },
         },
         init     = function ()
-            vim.g.material_style = "deep ocean"
-            vim.cmd.colorscheme("material")
-            vim.opt.guicursor = ""
+            vim.cmd.colorscheme("kanso")
         end
     },
 }

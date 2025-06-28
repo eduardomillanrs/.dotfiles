@@ -31,7 +31,7 @@ local options = {
     shortmess      = function (opt) opt:append({ c = true, C = true }) end,
     showmode       = false,
     sidescrolloff  = 8,
-    signcolumn     = "no",
+    signcolumn     = "yes",
     smartcase      = true,
     smartindent    = true,
     splitbelow     = true,
