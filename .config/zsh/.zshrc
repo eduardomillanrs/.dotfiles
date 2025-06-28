@@ -16,7 +16,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Plugins
-# zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 
@@ -52,7 +52,7 @@ alias _icns="rm /var/folders/*/*/*/com.apple.dock.iconcache; killall Dock"
 alias _kbd="hidutil property --set '{\"UserKeyMapping\":[{\"HIDKeyboardModifierMappingSrc\": 0x7000000E4,\"HIDKeyboardModifierMappingDst\": 0x7000000E6}]}'"
 
 # Source files
-# source "$ZDOTDIR/.p10k.zsh"
+source "$ZDOTDIR/.p10k.zsh"
 
 # JetBrains toolbox
 if [ -d "$HOME/Library/Application Support/JetBrains" ]; then
