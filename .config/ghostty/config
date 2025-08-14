@@ -1,7 +1,9 @@
 # Font
-font-family = JetBrains Mono
+# font-family = JetBrains Mono
+font-family = Lilex
 font-size = 15
 # font-feature = calt, liga, ss02
+font-feature = -calt
 
 # Cursor
 cursor-style = block

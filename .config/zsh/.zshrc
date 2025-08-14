@@ -54,7 +54,7 @@ alias _kbd="hidutil property --set '{\"UserKeyMapping\":[{\"HIDKeyboardModifierM
 # Source files
 source "$ZDOTDIR/.p10k.zsh"
 
-# JetBrains toolbox
+# JetBrains
 if [ -d "$HOME/Library/Application Support/JetBrains" ]; then
     path+=("$HOME/Library/Application Support/JetBrains/Toolbox/scripts")
 fi
@@ -72,14 +72,4 @@ fi
 # Angular CLI
 if [ "$(command -v ng)" != "" ]; then
     source <(ng completion script)
-fi
-
-# Golang
-if [ -d "$HOME/.go/bin" ]; then
-    path+=("$HOME/.go/bin")
-fi
-
-# Rust
-if [ -d "$HOME/.cargo" ]; then
-    source "$HOME/.cargo/env"
 fi
