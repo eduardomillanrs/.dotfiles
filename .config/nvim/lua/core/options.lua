@@ -30,6 +30,7 @@ local options = {
     shiftwidth     = 4,
     shortmess      = function (opt) opt:append({ c = true, C = true }) end,
     showmode       = false,
+    showtabline    = 0,
     sidescrolloff  = 8,
     signcolumn     = "yes",
     smartcase      = true,
@@ -55,4 +56,4 @@ for k, v in pairs(options) do
     else
         vim.opt[k] = v
     end
-end 
+end

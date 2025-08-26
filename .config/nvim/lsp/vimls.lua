@@ -14,6 +14,9 @@ return {
             count               = 3,
             projectRootPatterns = { "runtime", "nvim", ".git", "autoload", "plugin" },
         },
-        suggest     = { fromVimruntime = true, fromRuntimepath = true },
+        suggest     = {
+            fromVimruntime = true,
+            fromRuntimepath = true
+        },
     },
 }

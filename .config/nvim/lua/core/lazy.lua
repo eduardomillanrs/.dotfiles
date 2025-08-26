@@ -22,16 +22,16 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
 require("lazy").setup({
-    spec = {
+    spec             = {
         { import = "plugins" },
     },
-    install = {
+    install          = {
         colorscheme = { "default" },
     },
     change_detection = {
         notify = false,
     },
-    performance  = {
+    performance      = {
         rtp = {
             disabled_plugins = {
                 "gzip",

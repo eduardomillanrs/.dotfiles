@@ -1,9 +1,10 @@
 return {
     "nvim-lualine/lualine.nvim",
+    enabled      = false,
     dependencies = {
         "linrongbin16/lsp-progress.nvim"
     },
-    opts = function ()
+    opts         = function ()
         local lsp_progress = require("utils.lualine.components.lsp-progress")
 
         return {
@@ -18,12 +19,8 @@ return {
                 },
                 ignore_focus         = {},
                 always_divide_middle = true,
+                always_show_tabline  = false,
                 globalstatus         = true,
-                refresh              = {
-                    statusline = 100,
-                    tabline    = 100,
-                    winbar     = 100,
-                }
             },
             sections          = {
                 lualine_a = { "mode" },
@@ -46,20 +43,7 @@ return {
                 lualine_z = {}
             },
             tabline           = {
-                lualine_a = {
-                    {
-                        "tabs",
-                        max_length           = vim.o.columns,
-                        mode                 = 1,
-                        path                 = 0,
-                        use_mode_colors      = true,
-                        tabs_color           = {
-                            active   = "lualine_a_normal",
-                            inactive = "lualine_c_normal",
-                        },
-                        show_modified_status = false,
-                    },
-                },
+                lualine_a = {},
                 lualine_b = {},
                 lualine_c = {},
                 lualine_x = {},

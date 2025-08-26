@@ -54,7 +54,7 @@ alias _kbd="hidutil property --set '{\"UserKeyMapping\":[{\"HIDKeyboardModifierM
 # Source files
 source "$ZDOTDIR/.p10k.zsh"
 
-# JetBrains
+# JetBrains tools
 if [ -d "$HOME/Library/Application Support/JetBrains" ]; then
     path+=("$HOME/Library/Application Support/JetBrains/Toolbox/scripts")
 fi
@@ -64,12 +64,22 @@ if [ -f "$HOME/.orbstack/shell/init.zsh" ]; then
     source "$HOME/.orbstack/shell/init.zsh"
 fi
 
-# Composer
-if [ -d "$HOME/.composer/vendor/bin/" ]; then
-    path+=("$HOME/.composer/vendor/bin")
+# Cargo
+if [ -d "$HOME/.cargo" ]; then
+    source "$HOME/.cargo/env"
+fi
+
+# FNM
+if [ "$(command -v fnm)" != "" ]; then
+    eval "$(fnm env --use-on-cd --shell zsh)"
 fi
 
 # Angular CLI
 if [ "$(command -v ng)" != "" ]; then
     source <(ng completion script)
+fi
+
+# Composer
+if [ -d "$HOME/.composer/vendor/bin/" ]; then
+    path+=("$HOME/.composer/vendor/bin")
 fi

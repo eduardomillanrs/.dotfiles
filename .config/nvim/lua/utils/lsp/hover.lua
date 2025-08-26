@@ -42,7 +42,7 @@ function M.hover()
     vim.lsp.buf_request(bufnr, "textDocument/hover", {
         textDocument = vim.lsp.util.make_text_document_params(bufnr),
         position = { line = line, character = col }
-    }, function (err, result, ctx, _)
+    }, function (err, result, _, _)
         if err then
             vim.notify("Hover request failed", vim.log.levels.ERROR)
             return
@@ -56,11 +56,9 @@ function M.hover()
 
         -- Merge sections
         local final_lines = {}
-        local section_offset = 0
 
         if #diagnostic_lines > 0 then
             vim.list_extend(final_lines, diagnostic_lines)
-            section_offset = #diagnostic_lines
             if #hover_lines > 0 then
                 table.insert(final_lines, "---")
                 table.insert(final_lines, "") -- blank line before hover
@@ -73,7 +71,7 @@ function M.hover()
 
         -- Open floating preview
         if not vim.tbl_isempty(final_lines) then
-            local float_buf, float_win = vim.lsp.util.open_floating_preview(final_lines, "markdown", { focus = false })
+            local float_buf = vim.lsp.util.open_floating_preview(final_lines, "markdown", { focus = false })
 
             -- Apply highlights
             for _, hl in ipairs(highlights) do

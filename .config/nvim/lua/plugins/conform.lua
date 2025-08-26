@@ -1,4 +1,4 @@
-local blacklist = { "astro", "cssls", "html", "jsonls", "volar", "vtsls" }
+local blacklist = { "cssls", "html", "jsonls", "vtsls" }
 
 return {
     "stevearc/conform.nvim",
@@ -25,7 +25,6 @@ return {
             lsp_format = "fallback",
         },
         formatters_by_ft    = {
-            astro           = { "prettier" },
             css             = { "prettier" },
             graphql         = { "prettier" },
             html            = { "prettier" },
@@ -38,7 +37,6 @@ return {
             scss            = { "prettier" },
             typescript      = { "prettier" },
             typescriptreact = { "prettier" },
-            vue             = { "prettier" },
             yaml            = { "prettier" },
         },
         formatters          = {

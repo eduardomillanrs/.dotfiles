@@ -69,6 +69,6 @@ return {
         "--angularCoreVersion",
         default_angular_core_version,
     },
-    filetypes    = { "typescript", "html", "typescriptreact", "typescript.tsx", "htmlangular" },
+    filetypes    = { "html", "htmlangular", "typescript", "typescript.tsx" },
     root_markers = { "angular.json", "nx.json" },
 }
