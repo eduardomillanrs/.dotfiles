@@ -1,6 +1,7 @@
 return {
     "lewis6991/gitsigns.nvim",
-    opts = {
+    enabled = true,
+    opts    = {
         signs                        = {
             add          = { text = "┃" },
             change       = { text = "┃" },
@@ -17,8 +18,8 @@ return {
             changedelete = { text = "~" },
             untracked    = { text = "┆" },
         },
-        signs_staged_enable          = true,
-        signcolumn                   = true,
+        signs_staged_enable          = false,
+        signcolumn                   = false,
         numhl                        = false,
         linehl                       = false,
         word_diff                    = false,
@@ -31,7 +32,7 @@ return {
         current_line_blame_opts      = {
             virt_text          = true,
             virt_text_pos      = "eol",
-            delay              = 1000,
+            delay              = 500,
             ignore_whitespace  = false,
             virt_text_priority = 100,
             use_focus          = true,

@@ -2,7 +2,6 @@ local M = {}
 
 function M.path(...)
     local is_win = vim.uv.os_uname().sysname == "Windows_NT"
-
     return table.concat({ ... }, is_win and "\\" or "/")
 end
 
@@ -29,7 +28,7 @@ function M.get_servers()
 end
 
 function M.root_markers_with_field(root_files, new_names, field, fname)
-    local path = vim.fn.fnamemodify(fname, ":h")
+    local path  = vim.fn.fnamemodify(fname, ":h")
     local found = vim.fs.find(new_names, { path = path, upward = true })
 
     for _, f in ipairs(found or {}) do

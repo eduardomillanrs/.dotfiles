@@ -1,6 +1,6 @@
 return {
     "nvim-lualine/lualine.nvim",
-    enabled      = false,
+    enabled      = true,
     dependencies = {
         "linrongbin16/lsp-progress.nvim"
     },
@@ -26,7 +26,7 @@ return {
                 lualine_a = { "mode" },
                 lualine_b = { "branch" },
                 lualine_c = { "filename" },
-                lualine_x = { lsp_progress, "diagnostics" },
+                lualine_x = { lsp_progress },
                 lualine_y = {
                     { "filetype",   icons_enabled = false },
                     "encoding",

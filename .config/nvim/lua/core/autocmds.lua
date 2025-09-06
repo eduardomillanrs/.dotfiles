@@ -18,6 +18,14 @@ autocmd("TextYankPost", {
     end,
 })
 
+-- QuickFix local options
+autocmd("FileType", {
+    desc    = "Set local options to QuickFix",
+    group   = augroup,
+    pattern = "qf",
+    command = "setlocal wrap",
+})
+
 -- LSP Attach
 vim.api.nvim_create_autocmd("LspAttach", {
     desc     = "Setup LSP on attach",

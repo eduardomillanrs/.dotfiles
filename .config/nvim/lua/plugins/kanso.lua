@@ -9,9 +9,9 @@ return {
         undercurl      = true,
         commentStyle   = { italic = true, bold = false },
         functionStyle  = { italic = true, bold = false },
-        keywordStyle   = { italic = false, bold = false },
+        keywordStyle   = { italic = false, bold = true },
         statementStyle = { italic = false, bold = false },
-        typeStyle      = { italic = false, bold = false },
+        typeStyle      = { italic = false, bold = true },
         transparent    = false,
         dimInactive    = false,
         terminalColors = true,
@@ -28,8 +28,13 @@ return {
         },
     },
     init     = function ()
+        local kanso = require("kanso")
+
         vim.cmd.colorscheme("kanso")
-        vim.api.nvim_set_hl(0, "StatusLine", { bg = "#06090d", fg = "#c5c9c7" })
-        vim.api.nvim_set_hl(0, "TabLineFill", { bg = "#06090d" })
+
+        if kanso._CURRENT_THEME == "zen" then
+            vim.api.nvim_set_hl(0, "StatusLine", { bg = "#06090d", fg = "#c5c9c7" })
+            vim.api.nvim_set_hl(0, "TabLineFill", { bg = "#06090d" })
+        end
     end
 }
