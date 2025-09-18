@@ -5,6 +5,7 @@ return {
         "linrongbin16/lsp-progress.nvim"
     },
     opts         = function ()
+        local ok, neovim   = pcall(require, "utils.lualine.themes.neovim")
         local lsp_progress = require("utils.lualine.components.lsp-progress")
 
         return {
@@ -26,7 +27,7 @@ return {
                 lualine_a = { "mode" },
                 lualine_b = { "branch" },
                 lualine_c = { "filename" },
-                lualine_x = { lsp_progress },
+                lualine_x = { lsp_progress, "diagnostics" },
                 lualine_y = {
                     { "filetype",   icons_enabled = false },
                     "encoding",

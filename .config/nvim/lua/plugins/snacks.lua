@@ -13,9 +13,9 @@ return {
             enabled = true,
         },
         picker  = {
-            enabled = true,
-            ui_select = true,
-            win = {
+            enabled   = true,
+            ui_select = false,
+            win       = {
                 input = {
                     keys = {
                         ["<Esc>"] = { "close", mode = { "n", "i" } },

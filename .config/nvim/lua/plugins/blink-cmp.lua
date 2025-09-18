@@ -5,8 +5,7 @@ return {
         keymap     = {
             preset     = "none",
 
-            ["<M-CR>"] = { "show", "show_documentation", "hide_documentation" },
-            ["<C-_>"]  = { "show", "show_documentation", "hide_documentation" },
+            ["<A-CR>"] = { "show", "show_documentation", "hide_documentation" },
             ["<CR>"]   = { "accept", "fallback" },
 
             ["<Up>"]   = { "select_prev", "fallback" },

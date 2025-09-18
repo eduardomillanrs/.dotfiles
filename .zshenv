@@ -18,5 +18,8 @@ export HOMEBREW_NO_ANALYTICS=1
 # Fzf
 export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border"
 
+# SDKMAN
+export SDKMAN_DIR="$HOME/.sdkman"
+
 # Zinit
 export ZINIT_HOME="$ZDOTDIR/zinit/zinit.git"

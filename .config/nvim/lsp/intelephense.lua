@@ -5,5 +5,12 @@ return {
     root_markers = { ".git", "composer.json" },
     init_options = {
         globalStoragePath = vim.fn.stdpath("cache")
-    }
+    },
+    settings     = {
+        intelephense = {
+            format = {
+                braces = "k&r",
+            },
+        },
+    },
 }

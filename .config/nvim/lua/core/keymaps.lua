@@ -19,8 +19,8 @@ map("v", "<", "<gv", { noremap = true })
 map("v", ">", ">gv", { noremap = true })
 
 -- Better navigation
-map("n", "bn", "<CMD>bnext<CR>", { desc = "Go to next buffer", noremap = true })
-map("n", "bp", "<CMD>bprevious<CR>", { desc = "Go to previous buffer", noremap = true })
+-- map("n", "bn", "<CMD>bnext<CR>", { desc = "Go to next buffer", noremap = true })
+-- map("n", "bp", "<CMD>bprevious<CR>", { desc = "Go to previous buffer", noremap = true })
 
 -- Better buffer's content selection
 map("n", "yae", "ggyG", { desc = "Copy all file contents", noremap = true })
