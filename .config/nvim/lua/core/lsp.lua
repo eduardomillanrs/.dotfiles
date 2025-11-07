@@ -6,7 +6,7 @@ vim.lsp.config("*", { capabilities = capabilities })
 vim.lsp.enable(utils.get_servers())
 
 vim.diagnostic.config({
-    virtual_text     = false,
+    virtual_text     = true,
     underline        = false,
     signs            = false,
     update_in_insert = true,

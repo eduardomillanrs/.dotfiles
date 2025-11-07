@@ -14,12 +14,10 @@ export KEYTIMEOUT=1
 
 # Homebrew
 export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_CASK_OPTS="--appdir=${HOME}/Applications"
 
 # Fzf
-export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border"
-
-# SDKMAN
-export SDKMAN_DIR="$HOME/.sdkman"
+# export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border"
 
 # Zinit
 export ZINIT_HOME="$ZDOTDIR/zinit/zinit.git"

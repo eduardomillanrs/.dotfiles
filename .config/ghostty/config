@@ -1,6 +1,10 @@
+# Theme
+theme = no-clown-fiesta
+
 # Font
 font-family = Maple Mono
 font-size = 15
+font-thicken = false
 
 # Cursor
 cursor-style = block
@@ -9,11 +13,11 @@ cursor-style = block
 window-padding-x = 0
 window-padding-y = 0
 
+# Pane
+unfocused-split-opacity = 1
+
 # Shell integration
 shell-integration-features = no-cursor
-
-# Theme
-theme = Gruvbox Dark Hard
 
 # Macos
 macos-option-as-alt = left

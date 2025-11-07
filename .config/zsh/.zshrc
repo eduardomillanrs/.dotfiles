@@ -3,8 +3,6 @@ typeset -U path fpath
 # Macos
 if [ -f "/opt/homebrew/bin/brew" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
-    export FPATH="/opt/homebrew/share/zsh/site-functions:$FPATH"
-    path+=("/opt/homebrew/opt/libpq/bin")
 fi
 
 # Zinit 
@@ -16,8 +14,8 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Plugins
-zinit ice depth=1; zinit light romkatv/powerlevel10k
-zinit light zsh-users/zsh-syntax-highlighting
+# zinit ice depth=1; zinit light romkatv/powerlevel10k
+# zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 
 # Autoloads
@@ -51,35 +49,43 @@ alias ls="ls --color=auto"
 alias _icns="rm /var/folders/*/*/*/com.apple.dock.iconcache; killall Dock"
 alias _kbd="hidutil property --set '{\"UserKeyMapping\":[{\"HIDKeyboardModifierMappingSrc\": 0x7000000E4,\"HIDKeyboardModifierMappingDst\": 0x7000000E6}]}'"
 
-# Source files
-source "$ZDOTDIR/.p10k.zsh"
+# Prompt
+export PROMPT='%F{green}%n@%m%f:%F{blue}%~%f%# '
 
-# JetBrains tools
-if [ -d "$HOME/Library/Application Support/JetBrains" ]; then
-    path+=("$HOME/Library/Application Support/JetBrains/Toolbox/scripts")
-fi
+# Source files
+# source "$ZDOTDIR/.p10k.zsh"
 
 # Orbstack
 if [ -f "$HOME/.orbstack/shell/init.zsh" ]; then
     source "$HOME/.orbstack/shell/init.zsh"
 fi
 
-# Cargo
+# JetBrains
+if [ -d "$HOME/Library/Application Support/JetBrains" ]; then
+    path+=("$HOME/Library/Application Support/JetBrains/Toolbox/scripts")
+fi
+
+# Rust
 if [ -d "$HOME/.cargo" ]; then
     source "$HOME/.cargo/env"
 fi
 
-# FNM
+# Golang
+if [ -d "$HOME/.go" ]; then
+    path+=("$HOME/.go/bin")
+fi
+
+# NodeJS
 if [ "$(command -v fnm)" != "" ]; then
     eval "$(fnm env --use-on-cd --shell zsh)"
 fi
 
-# Angular CLI
+# Angular
 if [ "$(command -v ng)" != "" ]; then
     source <(ng completion script)
 fi
 
 # Composer
-if [ -d "$HOME/.composer/vendor/bin/" ]; then
+if [ -d "$HOME/.composer" ]; then
     path+=("$HOME/.composer/vendor/bin")
 fi
