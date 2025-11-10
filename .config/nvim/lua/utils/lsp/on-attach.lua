@@ -15,6 +15,4 @@ return function (args)
     map("n", "gh", vim.lsp.buf.hover, { desc = "LSP hover", buffer = bufnr })
     map("n", "gs", vim.lsp.buf.signature_help, { desc = "LSP signature help", buffer = bufnr })
     map("n", "g.", vim.lsp.buf.code_action, { desc = "LSP code action", buffer = bufnr })
-
-    map("n", "g,", vim.diagnostic.setloclist, { desc = "LSP buffer diangostics", buffer = bufnr })
 end

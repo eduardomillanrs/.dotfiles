@@ -3,9 +3,9 @@ return {
     lazy     = false,
     priority = 1000,
     keys     = {
-        { "<C-f>", function () Snacks.picker.files() end,   desc = "Files" },
-        { "<C-b>", function () Snacks.picker.buffers() end, desc = "Buffers" },
-        { "<C-g>", function () Snacks.picker.grep() end,    desc = "Grep" },
+        { "<C-f>", function () Snacks.picker.files() end,               desc = "Files" },
+        { "<C-g>", function () Snacks.picker.grep() end,                desc = "Grep" },
+        { "<C-x>", function () Snacks.picker.diagnostics_buffer() end, desc = "Buffer Diagnostics" },
     },
     opts     = {
         lazygit = {
@@ -28,17 +28,17 @@ return {
                 },
             },
             sources   = {
-                buffers = {
-                    layout = {
-                        preset = "select",
-                    },
-                },
                 files = {
                     layout = {
                         preset = "select",
                     },
                 },
                 grep = {
+                    layout = {
+                        preset = "vertical",
+                    },
+                },
+                diagnostics_buffer = {
                     layout = {
                         preset = "vertical",
                     },

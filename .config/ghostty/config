@@ -1,5 +1,5 @@
 # Theme
-theme = no-clown-fiesta
+theme = light:tairiki-light,dark:tairiki-dark
 
 # Font
 font-family = Maple Mono

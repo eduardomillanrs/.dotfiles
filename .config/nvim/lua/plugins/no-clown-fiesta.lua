@@ -16,6 +16,6 @@ return {
         },
     },
     init     = function ()
-        vim.cmd.colorscheme("no-clown-fiesta")
+        -- vim.cmd.colorscheme("no-clown-fiesta")
     end,
 }
